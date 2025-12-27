@@ -1,0 +1,9 @@
+sentence = "The dog is running fast"
+words = sentence.split()
+tags = ['NN']*len(words)
+for i,w in enumerate(words):
+    if w.lower() in ['the','a','an']: tags[i]='DT'
+    elif w.endswith('ing'): tags[i]='VBG'
+    elif w.lower() in ['is','am','are','was','were']: tags[i]='VB'
+    elif w.endswith('ly'): tags[i]='RB'
+print(list(zip(words,tags)))
