@@ -1,0 +1,7 @@
+import nltk
+from nltk.stem import PorterStemmer
+sentence = "Dogs are barking loudly"
+stemmer = PorterStemmer()
+words = nltk.word_tokenize(sentence)
+for w in words:
+    print(w, "→", stemmer.stem(w))
