@@ -1,0 +1,13 @@
+def ends_with_ab(s):
+    state = 0
+    for ch in s:
+        if state == 0 and ch == 'a':
+            state = 1
+        elif state == 1 and ch == 'b':
+            state = 2
+        else:
+            state = 1 if ch == 'a' else 0
+    return state == 2
+strings = ["ab", "cab", "abab", "abc", "aab"]
+for s in strings:
+    print(s, "→ Accepted" if ends_with_ab(s) else "→ Rejected")
