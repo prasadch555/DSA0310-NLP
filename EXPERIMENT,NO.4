@@ -1,0 +1,15 @@
+def pluralize(noun):
+    state = 0
+    for ch in noun:
+        if state == 0:
+            if ch in 'sxz' or noun.endswith(('ch', 'sh')):
+                state = 1
+            else:
+                state = 2
+    if state == 1:
+        return noun + "es"
+    else:
+        return noun + "s"
+nouns = ["cat", "bus", "box", "dish"]
+for n in nouns:
+    print(n, "→", pluralize(n))
