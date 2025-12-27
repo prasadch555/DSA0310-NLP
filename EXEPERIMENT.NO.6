@@ -1,0 +1,10 @@
+import random
+text = "I love Python. Python is fun. I love coding in Python."
+words = text.split()
+bigrams = {words[i]: words[i+1] for i in range(len(words)-1)}
+word = random.choice(words)
+output = [word]
+for _ in range(10):
+    word = bigrams.get(word, random.choice(words))
+    output.append(word)
+print(" ".join(output))
