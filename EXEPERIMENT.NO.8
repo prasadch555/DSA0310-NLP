@@ -1,0 +1,8 @@
+
+tag_dict = {}
+for word, tag in train:
+    tag_dict[word] = tag  
+
+sentence = ['NLTK','is','a','library']
+pos_tags = [(word, tag_dict.get(word, 'NN')) for word in sentence]
+print(pos_tags)
