@@ -1,0 +1,12 @@
+import re
+text = "The quick brown fox jumps over the lazy dog"
+words = text.split()
+def pos_tag(word):
+    if re.search(r'ing$', word): return 'VBG'
+    if re.search(r'ed$', word): return 'VBD'
+    if re.search(r'ly$', word): return 'RB'
+    if word.lower() in ['the','a','an']: return 'DT'
+    if re.search(r'ous$', word): return 'JJ'
+    return 'NN'
+tagged = [(w, pos_tag(w)) for w in words]
+print(tagged)
